@@ -24,3 +24,79 @@ swiper-container {
   .style-avatar {
     --border-radius: 0px;
   }
+
+  // page.scss
+
+.custom-bg-color {
+  --background: #f0f0f5; /* Color de fondo personalizado */
+  padding: 0;
+}
+
+.close-icon {
+  font-size: 2rem;
+  color: #888;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.sp-bg-color {
+  --background: #ffffff; /* Color de fondo de swiper-container */
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.slide {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
+}
+
+.slide-content {
+  padding: 20px;
+}
+
+.style-avatar {
+  margin-bottom: 15px;
+}
+
+.style-avatar img {
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.slide-title {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.slide-icon {
+  font-size: 2rem;
+  color: #007bff;
+  margin: 10px 0;
+}
+
+.slide-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.slide-description {
+  font-size: 1rem;
+  color: #666;
+}

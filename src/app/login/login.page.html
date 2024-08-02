@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center ion-text-uppercase">
+      Iniciar Sesión
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <figure class="profile-picture-container">
+    <img
+      class="profile-picture"
+      src="assets/images/male-profile-picture-symbol-vector.jpg"
+      alt="Perfil"
+    />
+  </figure>
+
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)" class="login-form">
+    <ion-item>
+      <ion-label position="floating">Email:</ion-label>
+      <ion-input
+        name="email"
+        formControlName="email"
+        aria-autocomplete="none"
+      ></ion-input>
+    </ion-item>
+    <div class="error-message">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div *ngIf="loginForm.get('email')?.hasError(validation.type) && loginForm.get('email')?.dirty">
+          {{validation.message}}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label position="floating">Password:</ion-label>
+      <ion-input
+        name="password"
+        type="password"
+        formControlName="password"
+        aria-autocomplete="none"
+      ></ion-input>
+    </ion-item>
+    <div class="error-message">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div *ngIf="loginForm.get('password')?.hasError(validation.type) && loginForm.get('password')?.dirty">
+          {{validation.message}}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-button type="submit" [disabled]="!loginForm.valid" expand="block" color="dark">
+      Ingresar
+    </ion-button>
+    <ion-button (click)="goToRegister()" expand="block" color="dark">
+      Registro
+    </ion-button>
+  </form>
+</ion-content>

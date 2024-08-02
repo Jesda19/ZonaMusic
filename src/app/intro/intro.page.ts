@@ -67,12 +67,11 @@ export class IntroPage implements OnInit {
       background: 'red',
     },
   ];
-  constructor(private router: Router , private storage: Storage) {}
+  constructor(private router: Router, private storage: Storage) {}
 
   ngOnInit() {}
   close() {
-    /* console.log("estoy intentando cerrar la intro") */
-    this.storage.set("isIntroShowed", true)
-    this.router.navigateByUrl("/home")
+    this.storage.set('isIntroShowed', true);
+    this.router.navigateByUrl('menu/home');
   }
 }

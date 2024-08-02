@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="goToLogin()"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+      <ion-title class="ion-text-center">REGISTRO</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<figure>
+  <img src="assets/images/male-profile-picture-symbol-vector.jpg">
+</figure>
+<form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+  <ion-item>
+    <ion-input label="Nombre" placeholder="Escriba su nombre" formControlName="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Apellido" placeholder="Escriba su Apellido" formControlName="last_name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Email" placeholder="Escriba su correo" formControlName="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Contraseña" placeholder="Dijite su contraseña" formControlName="password"></ion-input>
+  </ion-item>
+   
+  <ion-button type="submit" expand="block" color="dark" [disabled]="!registerForm.valid">REGISTRARSE</ion-button>
+</form>
+</ion-content>
